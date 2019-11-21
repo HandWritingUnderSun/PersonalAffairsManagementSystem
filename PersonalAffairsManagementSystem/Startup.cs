@@ -53,7 +53,7 @@ namespace PersonalAffairsManagementSystem
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Home}/{action=index}/{id?}");//Home表示文件夹，action表示页面文件
             });
         }
     }

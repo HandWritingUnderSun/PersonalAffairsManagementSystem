@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PAMS.IRepository\PAMS.IRepository.csproj" />
+    <ProjectReference Include="..\PAMS.IServices\PAMS.IServices.csproj" />
+    <ProjectReference Include="..\PAMS.Repository\PAMS.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -3,7 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.757
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalAffairsManagementSystem", "PersonalAffairsManagementSystem\PersonalAffairsManagementSystem.csproj", "{2FFF0390-D54E-46E2-952D-843D13486735}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalAffairsManagementSystem", "PersonalAffairsManagementSystem\PersonalAffairsManagementSystem.csproj", "{2FFF0390-D54E-46E2-952D-843D13486735}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B34642A8-EA93-433C-9F30-4D7EB9BB9ABE} = {B34642A8-EA93-433C-9F30-4D7EB9BB9ABE}
+		{C99651E6-6C6E-46DA-B456-1F9FAD782BBC} = {C99651E6-6C6E-46DA-B456-1F9FAD782BBC}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PAMS.Model", "PAMS.Model\PAMS.Model.csproj", "{F69BB12A-FAE2-45FD-8162-1452A72C326B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PAMS.IRepository", "PAMS.IRepository\PAMS.IRepository.csproj", "{71B6E7FB-E8D3-4551-8097-E5EFAB5F8AC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PAMS.Repository", "PAMS.Repository\PAMS.Repository.csproj", "{DEDA5650-112D-4127-83A6-C02742173428}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PAMS.IServices", "PAMS.IServices\PAMS.IServices.csproj", "{B34642A8-EA93-433C-9F30-4D7EB9BB9ABE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PAMS.Services", "PAMS.Services\PAMS.Services.csproj", "{C99651E6-6C6E-46DA-B456-1F9FAD782BBC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +29,26 @@ Global
 		{2FFF0390-D54E-46E2-952D-843D13486735}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FFF0390-D54E-46E2-952D-843D13486735}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FFF0390-D54E-46E2-952D-843D13486735}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F69BB12A-FAE2-45FD-8162-1452A72C326B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F69BB12A-FAE2-45FD-8162-1452A72C326B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F69BB12A-FAE2-45FD-8162-1452A72C326B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F69BB12A-FAE2-45FD-8162-1452A72C326B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71B6E7FB-E8D3-4551-8097-E5EFAB5F8AC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71B6E7FB-E8D3-4551-8097-E5EFAB5F8AC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71B6E7FB-E8D3-4551-8097-E5EFAB5F8AC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71B6E7FB-E8D3-4551-8097-E5EFAB5F8AC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEDA5650-112D-4127-83A6-C02742173428}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEDA5650-112D-4127-83A6-C02742173428}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEDA5650-112D-4127-83A6-C02742173428}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEDA5650-112D-4127-83A6-C02742173428}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B34642A8-EA93-433C-9F30-4D7EB9BB9ABE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B34642A8-EA93-433C-9F30-4D7EB9BB9ABE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B34642A8-EA93-433C-9F30-4D7EB9BB9ABE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B34642A8-EA93-433C-9F30-4D7EB9BB9ABE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C99651E6-6C6E-46DA-B456-1F9FAD782BBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C99651E6-6C6E-46DA-B456-1F9FAD782BBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C99651E6-6C6E-46DA-B456-1F9FAD782BBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C99651E6-6C6E-46DA-B456-1F9FAD782BBC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
