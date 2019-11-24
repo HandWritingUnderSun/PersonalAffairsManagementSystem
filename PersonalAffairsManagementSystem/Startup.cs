@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using PersonalAffairsManagementSystem.Models.User;
 
 namespace PersonalAffairsManagementSystem
 {
@@ -32,6 +33,24 @@ namespace PersonalAffairsManagementSystem
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            //var connection = @"Server=.;Database=Performance;UID=sa;Password=123sa;";
+            //services.AddDbContext<User>(options=>);
+
+            services.AddSwaggerGen(s =>
+            {
+                s.SwaggerDoc("v1", new Info
+                {
+                    Contact = new Contact
+                    {
+                        Name = "Danvic Wang",
+                        Email = "danvic96@hotmail.com",
+                        Url = "https://yuiter.com"
+                    },
+                    Description = "A front-background project build by ASP.NET Core 2.1 and Vue",
+                    Title = "Grapefruit.VuCore",
+                    Version = "v1"
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
