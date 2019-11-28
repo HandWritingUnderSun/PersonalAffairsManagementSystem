@@ -35,6 +35,9 @@ namespace PersonalAffairsManagementSystem
             Connection.MySqlConnection =Configuration.GetConnectionString("MySqlConnection");
             Connection.SqlConnection = Configuration.GetConnectionString("MySqlConnection");
             RedisConfig.Connection = Configuration.GetSection("RedisConfig")["Connection"];
+            RedisConfig.DefaultDataBase =Convert.ToInt32( Configuration.GetSection("RedisConfig")["DefaultDatabase"]);
+            RedisConfig.InstanceName = Configuration.GetSection("RedisConfig")["InstanceName"];
+            
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             //var connection = @"Server=.;Database=Performance;UID=sa;Password=123sa;";
