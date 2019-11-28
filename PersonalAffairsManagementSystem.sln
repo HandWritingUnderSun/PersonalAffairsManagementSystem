@@ -9,15 +9,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalAffairsManagementSy
 		{C99651E6-6C6E-46DA-B456-1F9FAD782BBC} = {C99651E6-6C6E-46DA-B456-1F9FAD782BBC}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PAMS.Model", "PAMS.Model\PAMS.Model.csproj", "{F69BB12A-FAE2-45FD-8162-1452A72C326B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PAMS.Model", "PAMS.Model\PAMS.Model.csproj", "{F69BB12A-FAE2-45FD-8162-1452A72C326B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PAMS.IRepository", "PAMS.IRepository\PAMS.IRepository.csproj", "{71B6E7FB-E8D3-4551-8097-E5EFAB5F8AC6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PAMS.IRepository", "PAMS.IRepository\PAMS.IRepository.csproj", "{71B6E7FB-E8D3-4551-8097-E5EFAB5F8AC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PAMS.Repository", "PAMS.Repository\PAMS.Repository.csproj", "{DEDA5650-112D-4127-83A6-C02742173428}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PAMS.Repository", "PAMS.Repository\PAMS.Repository.csproj", "{DEDA5650-112D-4127-83A6-C02742173428}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PAMS.IServices", "PAMS.IServices\PAMS.IServices.csproj", "{B34642A8-EA93-433C-9F30-4D7EB9BB9ABE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PAMS.IServices", "PAMS.IServices\PAMS.IServices.csproj", "{B34642A8-EA93-433C-9F30-4D7EB9BB9ABE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PAMS.Services", "PAMS.Services\PAMS.Services.csproj", "{C99651E6-6C6E-46DA-B456-1F9FAD782BBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PAMS.Services", "PAMS.Services\PAMS.Services.csproj", "{C99651E6-6C6E-46DA-B456-1F9FAD782BBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PAMS.Common", "PAMS.Common\PAMS.Common.csproj", "{7144FCF4-00A9-4C4A-899C-8D9D7F11DC5C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +51,10 @@ Global
 		{C99651E6-6C6E-46DA-B456-1F9FAD782BBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C99651E6-6C6E-46DA-B456-1F9FAD782BBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C99651E6-6C6E-46DA-B456-1F9FAD782BBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7144FCF4-00A9-4C4A-899C-8D9D7F11DC5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7144FCF4-00A9-4C4A-899C-8D9D7F11DC5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7144FCF4-00A9-4C4A-899C-8D9D7F11DC5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7144FCF4-00A9-4C4A-899C-8D9D7F11DC5C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
