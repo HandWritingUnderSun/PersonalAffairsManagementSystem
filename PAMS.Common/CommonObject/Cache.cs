@@ -46,15 +46,8 @@ namespace PAMS.Common.CommonObject
         public bool Exists<CacheType>(string key)
             where CacheType : ICacheHelper, new()
         {
-            if (cache != null && typeof(CacheType).Equals(cache.GetType()))
-            {
-                return cache.Exists(key);
-            }
-            else
-            {
-                cache = new CacheType();
-                return cache.Exists(key);
-            }
+            cache = GetCacheHelper<CacheType>();
+            return cache.Exists(key);
         }
 
         /// <summary>
@@ -68,15 +61,8 @@ namespace PAMS.Common.CommonObject
             where T : class
             where CacheType : ICacheHelper, new()
         {
-            if (cache != null && typeof(CacheType).Equals(cache.GetType()))
-            {
-                return cache.GetCache<T>(key);
-            }
-            else
-            {
-                cache = new CacheType();
-                return cache.GetCache<T>(key);
-            }
+            cache = Getcachehelper<CacheType>();
+            return cache.GetCache<T>(key);
         }
 
         /// <summary>
@@ -87,13 +73,8 @@ namespace PAMS.Common.CommonObject
         /// <param name="value">值</param>
         public void Save<CacheType>(string key, object value) where CacheType : ICacheHelper, new()
         {
-            if (cache != null && typeof(CacheType).Equals(cache.GetType()))
-                cache.SetCache(key, value);
-            else
-            {
-                cache = new CacheType();
-                cache.SetCache(key, value);
-            }
+            cache = GetCacheHelper<CacheType>();
+            cache.SetCache(key, value);
         }
 
         /// <summary>
@@ -105,13 +86,8 @@ namespace PAMS.Common.CommonObject
         /// <param name="expiressAbsoulte">绝对过期时间</param>
         public void Save<CacheType>(string key, object value, DateTimeOffset expiressAbsoulte) where CacheType : ICacheHelper, new()
         {
-            if (cache != null && typeof(CacheType).Equals(cache.GetType()))
-                cache.SetCache(key, value, expiressAbsoulte);
-            else
-            {
-                cache = new CacheType();
-                cache.SetCache(key, value, expiressAbsoulte);
-            }
+            cache = GetCacheHelper<CacheType>();
+            cache.SetCache(key, value, expiressAbsoulte);
         }
 
         /// <summary>
@@ -123,13 +99,8 @@ namespace PAMS.Common.CommonObject
         /// <param name="t">间隔时间</param>
         public void SaveSlidingCache<CacheType>(string key, object value, TimeSpan t) where CacheType : MemoryCacheHelper, new()
         {
-            if (cache != null && typeof(CacheType).Equals(cache.GetType()))
-                cache.SetSlidingCache(key, value, t);
-            else
-            {
-                cache = new CacheType();
-                cache.SetSlidingCache(key, value, t);
-            }
+            cache = GetCacheHelper<CacheType>();
+            cache.SetSlidingCache(key, value, t);
         }
 
         /// <summary>
@@ -139,13 +110,8 @@ namespace PAMS.Common.CommonObject
         /// <param name="key">要删除的key</param>
         public void Delete<CacheType>(string key) where CacheType : ICacheHelper, new()
         {
-            if (cache != null && typeof(CacheType).Equals(cache.GetType()))
-                cache.RemoveCache(key);
-            else
-            {
-                cache = new CacheType();
-                cache.RemoveCache(key);
-            }
+            cache = GetCacheHelper<CacheType>();
+            cache.RemoveCache(key);
         }
 
         /// <summary>
@@ -154,35 +120,20 @@ namespace PAMS.Common.CommonObject
         /// <typeparam name="CacheType"></typeparam>
         public void Dispose<CacheType>() where CacheType : ICacheHelper, new()
         {
-            if (cache != null && typeof(CacheType).Equals(cache.GetType()))
-                cache.Dispose();
-            else
-            {
-                cache = new CacheType();
-                cache.Dispose();
-            }
+            cache = GetCacheHelper<CacheType>();
+            cache.Dispose();
         }
 
         public void GetMessage<CacheType>() where CacheType : RedisCacheHelper, new()
         {
-            if (cache != null && typeof(CacheType).Equals(cache.GetType()))
-                cache.GetMessages();
-            else
-            {
-                cache = new CacheType();
-                cache.GetMessages();
-            }
+            cache = GetCacheHelper<CacheType>();
+            cache.GetMessages();
         }
 
         public void Publish<CacheType>(string msg) where CacheType : RedisCacheHelper, new()
         {
-            if (cache != null && typeof(CacheType).Equals(cache.GetType()))
-                cache.Publish(msg);
-            else
-            {
-                cache = new CacheType();
-                cache.Publish(msg);
-            }
+        cache = GetCacheHelper<CacheType>();
+        cache.Publish(msg);
         }
     }
 }
