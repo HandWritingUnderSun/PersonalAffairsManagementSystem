@@ -8,7 +8,7 @@ namespace PAMS.Common.CommonObject
     //然后ICacheHelper.cs，这个类是两种缓存通用的接口，让使用更方便
     public interface ICacheHelper
     {
-        bool Exist(string key);
+        bool Exists(string key);
 
         T GetCache<T>(string key) where T : class;
 
