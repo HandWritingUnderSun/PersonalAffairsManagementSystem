@@ -1,71 +1,15 @@
 IF OBJECT_ID('dbo.PAMS_USER', 'U') IS NOT NULL 
     DROP TABLE dbo.PAMS_USER;
 GO
-CREATE TABLE [dbo].[PAMS_USER](
-	[User_ID] [uniqueidentifier] NOT NULL,
-	[NodeID] [uniqueidentifier] NOT NULL,
-	[GroupID] [uniqueidentifier] NOT NULL,
-	[NAME] [nvarchar](256) NOT NULL,
-	[PASSWORD] [nvarchar](256) NOT NULL,
-	[LOGON_NAME] [nvarchar](256) NOT NULL,
-	[TelePhone] [nvarchar](50) NOT NULL,
-	[RelationPerson] [nvarchar](50) NOT NULL,
-	[url] [nvarchar](38) NOT NULL,
-	[userKey] [nvarchar](50) NOT NULL,
-	[Sex] [nvarchar](10) NOT NULL,
-	[Sequence] [int] NOT NULL,
-	[RTXNumber] [int] NOT NULL,
-	[iscandel] [tinyint] NULL,
-	[isMustUseKey] [tinyint] NULL,
-	[locationid] [uniqueidentifier] NULL,
-	[PICPATH] [nvarchar](200) NULL,
- CONSTRAINT [PK_BAP_USER] PRIMARY KEY CLUSTERED 
+CREATE TABLE PAMS_USER
 (
-	[User_ID] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+[UserID] [uniqueidentifier] NOT NULL,
+[UserName] [nvarchar] (256) COLLATE Chinese_PRC_CI_AS NOT NULL,
+[LogonPassword] [nvarchar] (256) COLLATE Chinese_PRC_CI_AS NOT NULL DEFAULT (''),
+[LogonName] [nvarchar] (256) COLLATE Chinese_PRC_CI_AS NOT NULL DEFAULT (''),
+[UserURL] [nvarchar] (38) COLLATE Chinese_PRC_CI_AS NOT NULL DEFAULT (''),
+[PicturePath] [nvarchar] (200) COLLATE Chinese_PRC_CI_AS NULL
 ) ON [PRIMARY]
-
 GO
-
-ALTER TABLE [dbo].[BAP_USER]  WITH NOCHECK ADD  CONSTRAINT [FK_BAP_USER_Z_NodeTree] FOREIGN KEY([NodeID])
-REFERENCES [dbo].[Z_NodeTree] ([NodeID])
-ON UPDATE CASCADE
-ON DELETE CASCADE
+ALTER TABLE [dbo].PAMS_USER ADD CONSTRAINT [PK_PAMS_USER] PRIMARY KEY CLUSTERED ([UserID]) ON [PRIMARY]
 GO
-
-ALTER TABLE [dbo].[BAP_USER] CHECK CONSTRAINT [FK_BAP_USER_Z_NodeTree]
-GO
-
-ALTER TABLE [dbo].[BAP_USER] ADD  CONSTRAINT [DF_BAP_USER_PASSWORD]  DEFAULT ('') FOR [PASSWORD]
-GO
-
-ALTER TABLE [dbo].[BAP_USER] ADD  CONSTRAINT [DF_BAP_USER_LOGON_NAME]  DEFAULT ('') FOR [LOGON_NAME]
-GO
-
-ALTER TABLE [dbo].[BAP_USER] ADD  CONSTRAINT [DF_BAP_USER_TelePhone]  DEFAULT ('') FOR [TelePhone]
-GO
-
-ALTER TABLE [dbo].[BAP_USER] ADD  CONSTRAINT [DF_BAP_USER_RelationPerson]  DEFAULT ('') FOR [RelationPerson]
-GO
-
-ALTER TABLE [dbo].[BAP_USER] ADD  CONSTRAINT [DF_BAP_USER_url]  DEFAULT ('') FOR [url]
-GO
-
-ALTER TABLE [dbo].[BAP_USER] ADD  CONSTRAINT [DF_BAP_USER_userKey]  DEFAULT ('') FOR [userKey]
-GO
-
-ALTER TABLE [dbo].[BAP_USER] ADD  CONSTRAINT [DF_BAP_USER_Sex]  DEFAULT (N'ÄÐ') FOR [Sex]
-GO
-
-ALTER TABLE [dbo].[BAP_USER] ADD  CONSTRAINT [DF_BAP_USER_Sequence]  DEFAULT (0) FOR [Sequence]
-GO
-
-ALTER TABLE [dbo].[BAP_USER] ADD  CONSTRAINT [DF_BAP_USER_RTXNumber]  DEFAULT (0) FOR [RTXNumber]
-GO
-
-ALTER TABLE [dbo].[BAP_USER] ADD  CONSTRAINT [DF_BAP_USER_iscandel]  DEFAULT ((0)) FOR [iscandel]
-GO
-
-ALTER TABLE [dbo].[BAP_USER] ADD  CONSTRAINT [DF_BAP_USER_isMustUseKey]  DEFAULT ((0)) FOR [isMustUseKey]
-GO
-

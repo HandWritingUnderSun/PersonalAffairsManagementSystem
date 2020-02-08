@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -37,7 +34,14 @@ namespace PersonalAffairsManagementSystem
             RedisConfig.Connection = Configuration.GetSection("RedisConfig")["Connection"];
             RedisConfig.DefaultDataBase =Convert.ToInt32( Configuration.GetSection("RedisConfig")["DefaultDatabase"]);
             RedisConfig.InstanceName = Configuration.GetSection("RedisConfig")["InstanceName"];
-            
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, o =>
+            {
+                //登录路径：这是当用户试图访问资源但未经过身份验证时，程序将会将请求重定向到这个相对路径
+                o.LoginPath = new PathString("/Account/Login");
+                //禁止访问路径：当用户试图访问资源时，但未通过该资源的任何授权策略，请求将被重定向到这个相对路径。
+                o.AccessDeniedPath = new PathString("/Home/Privacy");
+            });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             //var connection = @"Server=.;Database=Performance;UID=sa;Password=123sa;";
@@ -74,12 +78,12 @@ namespace PersonalAffairsManagementSystem
 
             app.UseStaticFiles();
             app.UseCookiePolicy();
-
+            app.UseAuthentication();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Logon}/{action=Welcome}/{id?}");//Home表示文件夹，action表示页面文件
+                    template: "{controller=Logon}/{action=Index}/{id?}");//Home表示文件夹，action表示页面文件
             });
         }
     }

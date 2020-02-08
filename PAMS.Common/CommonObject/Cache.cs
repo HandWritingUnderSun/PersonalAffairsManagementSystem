@@ -61,7 +61,7 @@ namespace PAMS.Common.CommonObject
             where T : class
             where CacheType : ICacheHelper, new()
         {
-            cache = Getcachehelper<CacheType>();
+            cache = GetCacheHelper<CacheType>();
             return cache.GetCache<T>(key);
         }
 
