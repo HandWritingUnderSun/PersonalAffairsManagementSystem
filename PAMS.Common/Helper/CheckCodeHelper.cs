@@ -123,13 +123,10 @@ namespace PAMS.Common.Helper
         /// </summary>
         /// <param name="type">验证码类型：数字，字符，符合</param>
         /// <returns></returns>
-        public string CreateCheckCode(CheckCodeType type)
+        public string CreateCheckCode(CheckCodeType type,int length)
         {
             string checekCode = string.Empty;
-            Random random = new Random();
-
-            //验证码位数
-            int length = random.Next(4, 6);
+            
             switch (type)
             {
                 case CheckCodeType.NumberCheckCode:

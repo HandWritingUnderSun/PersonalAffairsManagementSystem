@@ -1,4 +1,4 @@
-IF EXISTS ( SELECT  *
+IF NOT EXISTS ( SELECT  *
             FROM    dbo.S_Constant
             WHERE   CName = 'checkcodelength' )
     BEGIN
