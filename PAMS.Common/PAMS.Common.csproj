@@ -10,7 +10,7 @@
     <PackageReference Include="Microsoft.Extensions.Caching.Redis" Version="2.1.2" />
     <PackageReference Include="Microsoft.Extensions.configuration" Version="2.1.1" />
     <PackageReference Include="Microsoft.Extensions.configuration.json" Version="2.1.1" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="system.data.sqlclient" Version="4.7.0" />
     <PackageReference Include="ZKWeb.System.Drawing" Version="4.0.1" />
   </ItemGroup>
